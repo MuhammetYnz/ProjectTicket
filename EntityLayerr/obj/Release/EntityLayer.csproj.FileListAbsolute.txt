@@ -1,0 +1,12 @@
+C:\Users\muhammet.yanaz\source\repos\EntityLayerr\bin\Release\EntityLayerr.dll.config
+C:\Users\muhammet.yanaz\source\repos\EntityLayerr\bin\Release\EntityLayerr.dll
+C:\Users\muhammet.yanaz\source\repos\EntityLayerr\bin\Release\EntityLayerr.pdb
+C:\Users\muhammet.yanaz\source\repos\EntityLayerr\bin\Release\EntityFramework.dll
+C:\Users\muhammet.yanaz\source\repos\EntityLayerr\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\muhammet.yanaz\source\repos\EntityLayerr\bin\Release\EntityFramework.xml
+C:\Users\muhammet.yanaz\source\repos\EntityLayerr\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\muhammet.yanaz\source\repos\EntityLayerr\obj\Release\EntityLayer.csproj.AssemblyReference.cache
+C:\Users\muhammet.yanaz\source\repos\EntityLayerr\obj\Release\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\muhammet.yanaz\source\repos\EntityLayerr\obj\Release\EntityLayer.csproj.CopyComplete
+C:\Users\muhammet.yanaz\source\repos\EntityLayerr\obj\Release\EntityLayerr.dll
+C:\Users\muhammet.yanaz\source\repos\EntityLayerr\obj\Release\EntityLayerr.pdb

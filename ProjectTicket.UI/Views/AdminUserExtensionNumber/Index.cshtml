@@ -1,0 +1,42 @@
+﻿@using EntityLayer.Concrete
+@model List<User>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<br />
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title"><strong>DAHİLİ NUMARALAR</strong></h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th width="200px">DEPARTMAN</th>
+                    <th width="200px">AD</th>
+                    <th width="200px">SOYAD</th>
+                    <th width="200px">GÖREV</th>
+                    <th width="200px">DAHİLİ NO</th>
+                    <th width="200px">ŞİRKET NO</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Department.DepartmentName</td>
+                        <td>@item.UserName</td>
+                        <td>@item.UserLanstName</td>
+                        <td>@item.UserTitle</td>
+                        <td>@item.UserExtensionNumber</td>
+                        <td>@item.UserCompanyNumber</td>
+                        <td><a href="/AdminUserExtensionNumber/EditUserExtensionNumber/@item.UserID" class="btn btn-warning">Güncelle</a></td>
+                    </tr>
+                }
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

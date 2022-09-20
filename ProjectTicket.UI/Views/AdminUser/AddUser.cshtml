@@ -1,0 +1,51 @@
+﻿@model EntityLayer.Concrete.User
+@{
+    ViewBag.Title = "AddUser";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+
+<h1>Yeni Kullanıcı Oluştur</h1>
+<br />
+@using (Html.BeginForm("AddUser", "AdminUser", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.UserID, new { @class = "form-control" })
+
+    @Html.Label("Resim")
+    @Html.TextBoxFor(x => x.UserImage, new { @class = "form-control" })
+    <br />
+    @Html.Label("Departman")
+    @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kullanıcı Adı")
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kullanıcı Soyadı")
+    @Html.TextBoxFor(x => x.UserLanstName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Görev")
+    @Html.DropDownListFor(x => x.TitleID, (List<SelectListItem>)ViewBag.t, new { @class = "form-control" })
+    <br />
+    @Html.Label("Mail")
+    @Html.TextBoxFor(x => x.UserMail, new { @class = "form-control" })
+    <br />
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.UserPassword, new { @class = "form-control" })
+    <br />
+    @*@Html.Label("Durum")
+    @Html.EnumDropDownListFor(x => x.UserStatus, new { @class = "form-control" })*@
+    <br />
+    @Html.Label("Dahili No")
+    @Html.TextBoxFor(x => x.UserExtensionNumber, new { @class = "form-control" })
+    <br />
+    @Html.Label("Şirket No")
+    @Html.TextBoxFor(x => x.UserCompanyNumber, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info" id="kaydet">Kaydet</button>
+</div>}
+<script>
+    $('#kaydet').click(function () {
+        swal("Tebrikler", "Yeni kategori eklendi!", "success");
+    });</script>

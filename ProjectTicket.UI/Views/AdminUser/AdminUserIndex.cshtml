@@ -1,0 +1,53 @@
+﻿@using EntityLayer.Concrete
+@model List<User>
+@{
+    ViewBag.Title = "AdminUserIndex";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+<br />
+<a href="/AdminUser/AddUser/" class="btn btn-primary">Yeni Kullanıcı</a>
+<br /><br />
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title"><strong>KULLANICILAR</strong></h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th width="200px">RESİM</th>
+                    <th width="200px">DEPARTMAN</th>
+                    <th width="200px">AD</th>
+                    <th width="200px">SOYAD</th>
+                    <th width="200px">GÖREV</th>
+                    <th width="200px">MAİL</th>
+                    <th width="200px">ŞİFRE</th>
+                    <th width="200px">DURUM</th>
+                    <th width="200px">DAHİLİ NO</th>
+                    <th width="200px">ŞİRKET NO</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.UserImage</td>
+                        <td>@item.Department.DepartmentName</td>
+                        <td>@item.UserName</td>
+                        <td>@item.UserLanstName</td>
+                        <td>@item.Title.TitleName</td>
+                        <td>@item.UserMail</td>
+                        <td>@item.UserPassword</td>
+                        <td>@item.UserStatus</td>
+                        <td>@item.UserExtensionNumber</td>
+                        <td>@item.UserCompanyNumber</td>      
+                        <td><a href="/AdminUser/EditUser/@item.UserID" class="btn btn-warning">Güncelle</a></td>
+                    </tr>
+}
+
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+@*<a href="/AdminUser/AddUser/" class="btn btn-primary">Yeni Kullanıcı</a>*@

@@ -1,0 +1,27 @@
+﻿@model EntityLayer.Concrete.Content
+@{
+    ViewBag.Title = "AddContent";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+
+<h1>Yeni Talep Oluştur</h1>
+<br />
+@using (Html.BeginForm("AddContent", "Content", FormMethod.Post))
+{
+<div class="form-group">
+    @*<input type="hidden" name="UserID" value="@ViewBag.d" />*@
+    @Html.Label("Açıklama")
+    @Html.TextBoxFor(x => x.ContentValue, new { @class = "form-control" })
+    <br /><br />
+    @Html.Label("Kategori")
+    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+    <br /><br />
+    <button class="btn btn-info" id="kaydet">Kaydet</button>
+</div>}
+<script>
+    $('#kaydet').click(function () {
+        swal("Tebrikler", "Yeni kategori eklendi!", "success");
+    });</script>

@@ -1,0 +1,10 @@
+C:\Users\muhammet.yanaz\source\repos\EntityLayer\bin\Debug\netstandard2.1\EntityLayer.deps.json
+C:\Users\muhammet.yanaz\source\repos\EntityLayer\bin\Debug\netstandard2.1\EntityLayer.dll
+C:\Users\muhammet.yanaz\source\repos\EntityLayer\bin\Debug\netstandard2.1\EntityLayer.pdb
+C:\Users\muhammet.yanaz\source\repos\EntityLayer\obj\Debug\netstandard2.1\EntityLayer.csproj.AssemblyReference.cache
+C:\Users\muhammet.yanaz\source\repos\EntityLayer\obj\Debug\netstandard2.1\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\muhammet.yanaz\source\repos\EntityLayer\obj\Debug\netstandard2.1\EntityLayer.AssemblyInfoInputs.cache
+C:\Users\muhammet.yanaz\source\repos\EntityLayer\obj\Debug\netstandard2.1\EntityLayer.AssemblyInfo.cs
+C:\Users\muhammet.yanaz\source\repos\EntityLayer\obj\Debug\netstandard2.1\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\muhammet.yanaz\source\repos\EntityLayer\obj\Debug\netstandard2.1\EntityLayer.dll
+C:\Users\muhammet.yanaz\source\repos\EntityLayer\obj\Debug\netstandard2.1\EntityLayer.pdb

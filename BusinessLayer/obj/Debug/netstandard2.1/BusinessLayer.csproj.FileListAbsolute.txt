@@ -1,0 +1,10 @@
+C:\Users\muhammet.yanaz\source\repos\BusinessLayer\bin\Debug\netstandard2.1\BusinessLayer.deps.json
+C:\Users\muhammet.yanaz\source\repos\BusinessLayer\bin\Debug\netstandard2.1\BusinessLayer.dll
+C:\Users\muhammet.yanaz\source\repos\BusinessLayer\bin\Debug\netstandard2.1\BusinessLayer.pdb
+C:\Users\muhammet.yanaz\source\repos\BusinessLayer\obj\Debug\netstandard2.1\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\muhammet.yanaz\source\repos\BusinessLayer\obj\Debug\netstandard2.1\BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\muhammet.yanaz\source\repos\BusinessLayer\obj\Debug\netstandard2.1\BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\muhammet.yanaz\source\repos\BusinessLayer\obj\Debug\netstandard2.1\BusinessLayer.AssemblyInfo.cs
+C:\Users\muhammet.yanaz\source\repos\BusinessLayer\obj\Debug\netstandard2.1\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\muhammet.yanaz\source\repos\BusinessLayer\obj\Debug\netstandard2.1\BusinessLayer.dll
+C:\Users\muhammet.yanaz\source\repos\BusinessLayer\obj\Debug\netstandard2.1\BusinessLayer.pdb

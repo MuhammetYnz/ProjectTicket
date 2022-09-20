@@ -1,0 +1,44 @@
+﻿@using EntityLayer.Concrete
+@model List<Announcement>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+<br />
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title"><strong>DUYURULAR</strong></h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    @*<th>KATEGORİ</th>*@
+                    <th width="200px">DUYURU</th>
+                    <th width="200px">TARİH</th>
+                    @*<th>DURUM</th>*@
+                    <th width="500px">AÇIKLAMA</th>
+                    <th width="100px"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    @*<td>@item.Category.CategoryName</td>*@
+                    <td>
+                        @item.AnnouncementName
+                    </td>
+                    <td>@(((DateTime)item.AnnouncementDate).ToString("dd MMM yyyy"))</td>
+                    @*<td>@item.AnnouncementStatus</td>*@                  
+                    <td>@item.AnnouncementContent@*.Substring(0,100)*@<strong>...</strong></td>
+                    <td><a href="/Announcement/AnnouncementDetail/@item.AnnouncementID" class="btn btn-warning">Detay</a></td>                   
+                </tr>
+                }
+
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

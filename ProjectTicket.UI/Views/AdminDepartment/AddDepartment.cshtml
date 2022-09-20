@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concrete.Department
+@{
+    ViewBag.Title = "AddDepartment";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+
+<h1>Yeni Departman Ekleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("AddDepartment", "AdminDepartment", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Departman Adı")
+        @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(x => x.CategoryName)*@
+        <br /><br />
+        @Html.Label("Departman Durum")
+        @Html.EnumDropDownListFor(x => x.DepartmentStatus, new { @class = "form-control" })
+        <br /><br />
+        <button class="btn btn-info" id="kaydet">Kaydet</button>
+    </div>
+    }
+<script>
+    $('#kaydet').click(function () {
+        swal("Tebrikler", "Yeni kategori eklendi!", "success");
+    });</script>

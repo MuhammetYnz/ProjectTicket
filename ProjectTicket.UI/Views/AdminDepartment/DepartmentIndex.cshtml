@@ -1,0 +1,35 @@
+﻿@using EntityLayer.Concrete
+@model List<Department>
+@{ ViewBag.Title = "DepartmentIndex";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
+<br />
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title"><strong>DEPARTMANLAR</strong></h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    @*<th>KATEGORİ</th>*@
+                    <th width="200px">DEPARTMAN</th>
+                    <th width="200px">DURUM</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+    <tr>
+        <td>@item.DepartmentName</td>
+        <td>
+            @item.DepartmentStatus</td>      
+    </tr>
+}
+
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<a href="/AdminDepartment/AddDepartment/" class="btn btn-warning">Yeni Departman</a>

@@ -1,0 +1,15 @@
+C:\Users\muhammet.yanaz\source\repos\DataAccessLayerr\bin\Release\DataAccessLayerr.dll.config
+C:\Users\muhammet.yanaz\source\repos\DataAccessLayerr\bin\Release\DataAccessLayerr.dll
+C:\Users\muhammet.yanaz\source\repos\DataAccessLayerr\bin\Release\DataAccessLayerr.pdb
+C:\Users\muhammet.yanaz\source\repos\DataAccessLayerr\bin\Release\EntityFramework.dll
+C:\Users\muhammet.yanaz\source\repos\DataAccessLayerr\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\muhammet.yanaz\source\repos\DataAccessLayerr\bin\Release\EntityLayerr.dll
+C:\Users\muhammet.yanaz\source\repos\DataAccessLayerr\bin\Release\EntityLayerr.pdb
+C:\Users\muhammet.yanaz\source\repos\DataAccessLayerr\bin\Release\EntityLayerr.dll.config
+C:\Users\muhammet.yanaz\source\repos\DataAccessLayerr\bin\Release\EntityFramework.xml
+C:\Users\muhammet.yanaz\source\repos\DataAccessLayerr\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\muhammet.yanaz\source\repos\DataAccessLayerr\obj\Release\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\muhammet.yanaz\source\repos\DataAccessLayerr\obj\Release\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\muhammet.yanaz\source\repos\DataAccessLayerr\obj\Release\DataAccessLayer.csproj.CopyComplete
+C:\Users\muhammet.yanaz\source\repos\DataAccessLayerr\obj\Release\DataAccessLayerr.dll
+C:\Users\muhammet.yanaz\source\repos\DataAccessLayerr\obj\Release\DataAccessLayerr.pdb
