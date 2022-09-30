@@ -31,7 +31,7 @@ namespace ProjectTicket.UI.Controllers
         public ActionResult AddCategory(Category p)
         {
             if (c.Categories.Any(x=>x.CategoryName==p.CategoryName)) return RedirectToAction("Index");// aynı kategori eklenmesin
-           
+            p.CategoryStatus = Status.Aktif;
             cm.CategoryAdd(p);
             return RedirectToAction("Index");
         }

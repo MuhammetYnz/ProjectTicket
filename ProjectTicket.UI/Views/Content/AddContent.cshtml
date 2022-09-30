@@ -14,7 +14,7 @@
 <div class="form-group">
     @*<input type="hidden" name="UserID" value="@ViewBag.d" />*@
     @Html.Label("Açıklama")
-    @Html.TextBoxFor(x => x.ContentValue, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.ContentValue, new { @class = "form-control", required = "required" })
     <br /><br />
     @Html.Label("Kategori")
     @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })

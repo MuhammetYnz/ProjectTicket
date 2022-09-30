@@ -29,6 +29,7 @@ namespace ProjectTicket.UI.Controllers
         [HttpPost]
         public ActionResult AddDepartment(Department p)
         {
+            p.DepartmentStatus = Status.Aktif;
             dm.DepartmentAdd(p);
             return RedirectToAction("DepartmentIndex");
         }

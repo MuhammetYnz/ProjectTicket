@@ -16,9 +16,6 @@
         @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
         @*@Html.ValidationMessageFor(x => x.CategoryName)*@
         <br /><br />
-        @Html.Label("Departman Durum")
-        @Html.EnumDropDownListFor(x => x.DepartmentStatus, new { @class = "form-control" })
-        <br /><br />
         <button class="btn btn-info" id="kaydet">Kaydet</button>
     </div>
     }

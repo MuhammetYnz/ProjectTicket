@@ -2580,9 +2580,9 @@
     <Content Include="Views\AdminTitle\TitleIndex.cshtml" />
     <Content Include="Views\AdminTitle\AddTitle.cshtml" />
     <Content Include="Views\AdminTitle\EditTitle.cshtml" />
-    <Content Include="Views\Image\FoodIndex.cshtml" />
-    <Content Include="Views\Image\AddImageFood.cshtml" />
-    <Content Include="Views\Image\EditImageFood.cshtml" />
+    <Content Include="Views\AdminImage\FoodIndex.cshtml" />
+    <Content Include="Views\AdminImage\AddImageFood.cshtml" />
+    <Content Include="Views\AdminImage\EditImageFood.cshtml" />
     <Content Include="Views\ImageFood\IndexFood.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -12,7 +12,7 @@
 {
     <div class="form-group">
         @Html.Label("Görev Adı")
-        @Html.TextBoxFor(x => x.TitleName, new { @class = "form-control" })
+        @Html.TextBoxFor(x => x.TitleName, new { @class = "form-control", required = "required" })
         @*@Html.ValidationMessageFor(x => x.CategoryName)*@
         <br /><br />
         @Html.Label("Durum")

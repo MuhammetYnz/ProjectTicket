@@ -30,16 +30,16 @@
     <br /><br />
 
     @Html.Label("Duyuru Adı", new { @style = "color:MidnightBlue" })
-    @Html.TextBoxFor(x => x.AnnouncementName, new { @class = "form-control", @style = "background-color:LightCyan" })
+    @Html.TextBoxFor(x => x.AnnouncementName, new { @class = "form-control", @style = "background-color:LightCyan",required = "required" })
 
 
     <br /><br />
     @Html.Label("Duyuru", new { @style = "color:MidnightBlue" })
-    @Html.TextAreaFor(x => x.AnnouncementContent, new { @class = "form-control", @style = "background-color:LightCyan" })
+    @Html.TextAreaFor(x => x.AnnouncementContent, new { @class = "form-control", @style = "background-color:LightCyan", required = "required" })
 
     <br /><br />
     @Html.Label("Tarih")
-    <input class="fake-date " type="datetime-local" name="AnnouncementDate" value="" />
+    <input class="fake-date " type="datetime-local" name="AnnouncementDate" value="" required/>
     <br /><br />
 
     <button class="btn btn-info" id="kaydet">Kaydet</button>
