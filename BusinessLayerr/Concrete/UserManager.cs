@@ -28,6 +28,11 @@ namespace BusinessLayer.Abstract
             return _userDal.List();
         }
 
+        public List<User> GetSearchList(string p)
+        {
+            return _userDal.List(x=>x.UserName.Contains(p));
+        }
+
         public User GetUser(string username, string password)
         {
             return _userDal.Get(x => x.UserMail == username && x.UserPassword == password);

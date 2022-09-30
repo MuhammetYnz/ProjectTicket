@@ -16,14 +16,16 @@
     <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css" />
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />*@
     <style>
         div.row .col-lg-3.col-6 {
             opacity: 0.6;
         }
-      /*  lord-icon > src{
+        /*  lord-icon > src{
             opacity: 10;
         }*/
-        
+
     </style>
 </head>
 <!--
@@ -42,81 +44,97 @@ to get the desired effect
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="/Default/Index/" class="brand-link">
-                    <img src="~/AdminLTE-3.0.4/login-form-19/images/banner.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                         style="opacity: .8">
-                    <span class="brand-text font-weight-light">FEZA SUNİ DERİ</span>
-                </a>
+                <img src="~/AdminLTE-3.0.4/login-form-19/images/banner.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                     style="opacity: .8">
+                <span class="brand-text font-weight-light">FEZA SUNİ DERİ</span>
+            </a>
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 @*@Html.Partial("_LoginPartial")*@
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="~/AdminLTE-3.0.4/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                    </div>
                     @Html.Action("UserLoginPartial", "UserLogin")
                 </div>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item">
-                            <a href="/Content/Index/" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                            <a href="/Content/ContentIndex/" class="nav-link">
+                                <i class="nav-icon fas fa-hand-point-up"></i>
                                 <p>
-                                    DESTEK TALEBİ
+                                    Destek Talebi
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="/ExtensionNumber/Index/" class="nav-link">
-                                <i class="nav-icon far fa-map"></i>
+                                <i class="nav-icon fas fa-address-card"></i>
                                 <p>
-                                    DAHİLİ NUMARALAR
+                                    Dahili Numaralar
                                 </p>
                             </a>
 
                         </li>
                         @if (User.IsInRole("Yönetici"))
                         {
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-book"></i>
-                                <p>
-                                    Yönetim Alanı
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/AdminContent/Index/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Talepler</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/AdminAnnouncement/Index/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Duyurular</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/AdminDepartment/DepartmentIndex/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Departmanlar</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/AdminUser/AdminUserIndex/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Kullanıcılar</p>
-                                    </a>
-                                </li>                                                      
-                            </ul>
-                        </li>
-                        }
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon far fa-plus-square"></i>
+                    <p>
+                        Yönetim Alanı
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="/AdminContent/Index/" class="nav-link">
+                            <i class="fas fa-hand-point-up nav-icon"></i>
+                            <p>Talepler</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/AdminAnnouncement/Index/" class="nav-link">
+                            <i class="fas fa-comment nav-icon"></i>
+                            <p>Duyurular</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/AdminUser/AdminUserIndex/" class="nav-link">
+                            <i class="fas fa-handshake nav-icon"></i>
+                            <p>Kullanıcılar</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/AdminTitle/TitleIndex/" class="nav-link">
+                            <i class="fas fa-bookmark nav-icon"></i>
+                            <p>Kullanıcı Görevleri</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/AdminDepartment/DepartmentIndex/" class="nav-link">
+                            <i class="fas fa-id-card-alt nav-icon"></i>
+                            <p>Departmanlar</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/AdminCategory/Index/" class="nav-link">
+                            <i class="fa fa-outdent nav-icon"></i>
+                            <p>Kategoriler</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Image/FoodIndex/" class="nav-link">
+                            <i class="fas fa-bread-slice nav-icon"></i>
+                            <p>Yemek Listesi</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+}
                         <li class="nav-item has-treeview">
                             <a href="/UserLogin/LogOut/" class="nav-link">
-                                <i class="nav-icon fas fa-door-closed "></i>
+                                <i class="nav-icon fas fa-door-open "></i>
                                 <p>
                                     Çıkış Yap
                                 </p>
@@ -130,9 +148,9 @@ to get the desired effect
         </aside>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background: url('/AdminLTE-3.0.4/login-form-20/images/fezalogoOn.png'); background-size: 180vh 100vh">
-            
+
             <div class="content">
-                
+
                 @RenderBody()
                 <!-- /.container-fluid -->
             </div>
@@ -170,6 +188,11 @@ to get the desired effect
     <!-- ChartJS -->
     <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
 
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-2.0.0.min.js"></script>
+    <script src="~/Scripts/CustomScript.js"></script>
     <!-- PAGE SCRIPTS -->
     <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard2.js"></script>
 </body>

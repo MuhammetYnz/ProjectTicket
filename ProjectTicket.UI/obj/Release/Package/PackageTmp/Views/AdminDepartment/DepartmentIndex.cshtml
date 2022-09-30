@@ -1,0 +1,56 @@
+﻿@using EntityLayer.Concrete
+@model List<Department>
+@{ ViewBag.Title = "DepartmentIndex";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
+<br />
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title"><strong>Departrmanlar</strong></h3>
+        <br />
+        <a class="btn btn-primary btn-sm" href="/AdminDepartment/AddDepartment/">
+            <i class="fas fa-folder">
+            </i>
+            Departman Ekle
+        </a>
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-striped projects">
+            <thead>
+                <tr>
+                    <th>
+                        Departman Adı
+                    </th>
+                    <th>
+                        Durum
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+    <tr>
+        <td>
+            @item.DepartmentName
+        </td>
+
+        <td>
+            @if (@item.DepartmentStatus == Status.Aktif)
+            {
+<span class="badge badge-success">@item.DepartmentStatus</span> }
+else
+{
+<span class="badge badge-danger">@item.DepartmentStatus</span>}
+        </td>
+    </tr>}
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

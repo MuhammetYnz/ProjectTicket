@@ -9,10 +9,16 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int AnnouncementID { get; set; }
+
         public string AnnouncementName { get; set; }
+  
         public string AnnouncementContent { get; set; }
+
         public DateTime AnnouncementDate { get; set; }
+
         public Status AnnouncementStatus { get; set; }
+
+        public string AnnouncementImage { get; set; }
 
         public int CategoryID { get; set; }
         public virtual Category Category { get; set; }

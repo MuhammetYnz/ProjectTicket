@@ -1,0 +1,55 @@
+﻿@model EntityLayer.Concrete.Announcement
+
+@{
+    ViewBag.Title = "AnnouncementDetail";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<h2>Duyuru Detay</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnnouncementName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnnouncementName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnnouncementContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnnouncementContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnnouncementDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnnouncementDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnnouncementStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnnouncementStatus)
+        </dd>
+
+    </dl>
+</div>
+

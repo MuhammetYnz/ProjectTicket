@@ -19,12 +19,22 @@ namespace ProjectTicket.UI.Controllers
         Context c = new Context();
         // GET: Content
         
-        public ActionResult Index(string p)
+        public ActionResult ContentIndex(string p)
         {
             p = (string)Session["UserMail"];
             var userIdIinfo = c.Users.Where(x => x.UserMail == p).Select(y => y.UserID).FirstOrDefault();
             //ViewBag.d = p;
             var contentValues = cm.GetListByUser(userIdIinfo);
+
+            //Kullanıcı ya ad soyad ile hitap etmek için
+            var username = User.Identity.Name;
+            var userName = c.Users.Where(x => x.UserMail == username).Select(y => y.UserName).FirstOrDefault();
+            var userLastName = c.Users.Where(x => x.UserMail == username).Select(y => y.UserLanstName).FirstOrDefault();
+
+            ViewBag.n = userName;
+            ViewBag.ln = userLastName;
+
+
             return View(contentValues);
         }
 
@@ -47,11 +57,11 @@ namespace ProjectTicket.UI.Controllers
         {
             string userMailInfo = (string)Session["UserMail"];
             var userIdInfo = c.Users.Where(x => x.UserMail == userMailInfo).Select(y => y.UserID).FirstOrDefault();
-            p.ContentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            p.ContentDate = DateTime.Parse(DateTime.Now.ToString("dd MMM yyyy hh:mm"));
             p.UserID = userIdInfo;
-            p.ContentStatus = 0;
+            p.ContentStatus = Status.İncelemede;
             cm.ContentAdd(p);
-            return RedirectToAction("Index");
+            return RedirectToAction("ContentIndex");
         }
     }
     

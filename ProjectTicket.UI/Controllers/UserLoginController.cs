@@ -48,8 +48,10 @@ namespace ProjectTicket.UI.Controllers
             var username = User.Identity.Name;
             var userName = c.Users.Where(x => x.UserMail == username).Select(y => y.UserName).FirstOrDefault();
             var userLastName = c.Users.Where(x => x.UserMail == username).Select(y => y.UserLanstName).FirstOrDefault();
+            var userImage = c.Users.Where(x => x.UserMail == username).Select(y => y.UserImage).FirstOrDefault();
             ViewBag.n = userName;
             ViewBag.ln = userLastName;
+            ViewBag.Imge = userImage;
             return PartialView();         
         }
 

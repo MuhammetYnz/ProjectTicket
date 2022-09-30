@@ -141,6 +141,8 @@
     <Content Include="AdminLTE-3.0.4\dist\img\credit\paypal.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\credit\paypal2.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\credit\visa.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Wallpaper.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\YUSUF KALKAN-1.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\default-150x150.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\icons.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo1.png" />
@@ -160,6 +162,7 @@
     <Content Include="AdminLTE-3.0.4\dist\img\user6-128x128.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\user7-128x128.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\user8-128x128.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\YUSUF KALKAN.jpeg" />
     <Content Include="AdminLTE-3.0.4\dist\js\adminlte.js" />
     <Content Include="AdminLTE-3.0.4\dist\js\adminlte.min.js" />
     <Content Include="AdminLTE-3.0.4\dist\js\demo.js" />
@@ -1961,6 +1964,8 @@
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.min.css" />
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.min.js" />
     <Content Include="AdminLTE-3.0.4\starter.html" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -1977,13 +1982,66 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-2.0.0.intellisense.js" />
+    <Content Include="Scripts\CustomScript.js" />
+    <Content Include="Scripts\jquery-2.0.0.js" />
+    <Content Include="Scripts\jquery-2.0.0.min.js" />
+    <Content Include="Scripts\jquery-ui-1.13.2.js" />
+    <Content Include="Scripts\jquery-ui-1.13.2.min.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1994,12 +2052,15 @@
     <Compile Include="Controllers\AdminDepartmentController.cs" />
     <Compile Include="Controllers\AdminHomeController.cs" />
     <Compile Include="Controllers\AdminLoginController.cs" />
+    <Compile Include="Controllers\AdminTitleController.cs" />
     <Compile Include="Controllers\AdminUserController.cs" />
     <Compile Include="Controllers\AdminUserExtensionNumberController.cs" />
     <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ExtensionNumberController.cs" />
+    <Compile Include="Controllers\AdminImageController.cs" />
+    <Compile Include="Controllers\ImageFoodController.cs" />
     <Compile Include="Controllers\NewEmployeeController.cs" />
     <Compile Include="Controllers\UserLoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2489,7 +2550,7 @@
     <Content Include="Views\AdminCategory\Index.cshtml" />
     <Content Include="Views\AdminCategory\AddCategory.cshtml" />
     <Content Include="Views\AdminCategory\EditCategory.cshtml" />
-    <Content Include="Views\Content\Index.cshtml" />
+    <Content Include="Views\Content\ContentIndex.cshtml" />
     <Content Include="Views\Content\AddContent.cshtml" />
     <Content Include="Views\UserLogin\UserIndex.cshtml" />
     <Content Include="Views\AdminContent\Index.cshtml" />
@@ -2514,6 +2575,15 @@
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-2.0.0.min.map" />
+    <Content Include="Views\AdminAnnouncement\EditAnnouncement.cshtml" />
+    <Content Include="Views\AdminTitle\TitleIndex.cshtml" />
+    <Content Include="Views\AdminTitle\AddTitle.cshtml" />
+    <Content Include="Views\AdminTitle\EditTitle.cshtml" />
+    <Content Include="Views\Image\FoodIndex.cshtml" />
+    <Content Include="Views\Image\AddImageFood.cshtml" />
+    <Content Include="Views\Image\EditImageFood.cshtml" />
+    <Content Include="Views\ImageFood\IndexFood.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2524,6 +2594,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Uploads\Announcement\" />
+    <Folder Include="Uploads\FoodImage\" />
+    <Folder Include="Uploads\User\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="AdminLTE-3.0.4\plugins\fullcalendar-bootstrap\main.d.ts" />

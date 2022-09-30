@@ -1,0 +1,82 @@
+﻿@using EntityLayer.Concrete
+@model List<Content>
+@{ ViewBag.Title = "ContentIndex";
+   Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
+
+<br />
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title" style="color: crimson">Merhaba <strong>@ViewBag.n @ViewBag.ln</strong> Güncel taleplerin aşağıdaki gibidir..</h3>
+        <br />
+        
+        <div class="card-tools">
+            <a class="btn btn-primary btn-sm" href="/Content/AddContent/">
+                <i class="fas fa-folder">
+                </i>
+                Yeni Talep
+            </a>
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-striped projects">
+            <thead>
+                <tr>                   
+                    <th @*style="width: 150px"*@>
+                        Kategori
+                    </th>
+                    <th @*style="width: 200px"*@>
+                        Kullanıcı
+                    </th>
+                    <th @*style="width: 150px"*@>
+                        Tarih
+                    </th>
+                    <th @*style="width: 70px"*@>
+                        Durum
+                    </th>
+                    <th @*style="width: 220px"*@ @*class="text-center"*@>
+                        Açıklama
+                    </th>
+                    <th @*style="width: 150px"*@>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+    <tr>
+        <td>
+            @item.Category.CategoryName
+        </td>
+        <td>
+            <a>
+                @item.User.UserName @item.User.UserLanstName
+            </a>
+            <br />
+            <small>
+                @item.User.Title.TitleName
+            </small>
+        </td>
+        <td>
+            @(((DateTime)item.ContentDate).ToString("dd MMM yyyy hh:mm"))
+        </td>
+
+        <td @*class="project-state"*@>
+            @if (@item.ContentStatus == Status.Tamamlandı)
+            {
+<span class="badge badge-success">@item.ContentStatus</span> }
+else
+{
+<span class="badge badge-danger">@item.ContentStatus</span>}
+        </td>
+        <td>
+            @item.ContentValue
+        </td>
+    </tr>}
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

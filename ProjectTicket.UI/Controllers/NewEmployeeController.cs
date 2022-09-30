@@ -15,7 +15,7 @@ namespace ProjectTicket.UI.Controllers
         
         public ActionResult Index()
         {
-            var extenValues = um.GetList();
+            var extenValues = um.GetList().OrderByDescending(x=>x.UserID).Take(6).ToList();
             return View(extenValues);          
         }
     }

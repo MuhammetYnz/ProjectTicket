@@ -1,0 +1,84 @@
+﻿@using EntityLayer.Concrete
+@model List<Announcement>
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
+<br />
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title"><strong>Duyurular</strong></h3>
+        <br />
+        <a class="btn btn-primary btn-sm" href="/AdminAnnouncement/AddAnnouncement/">
+            <i class="fas fa-folder">
+            </i>
+            Duyuru Yap
+        </a>
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-striped projects">
+            <thead>
+                <tr>
+                    <th >
+                        Duyuru
+                    </th>
+                    <th >
+                        Tarih
+                    </th>
+                    <th >
+                        Açıklama
+                    </th>
+                    <th >
+                        Durum
+                    </th>
+                    <th >
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @item.AnnouncementName
+                    </td>
+                    <td>
+                        @(((DateTime)item.AnnouncementDate).ToString("dd MMM yyyy"))
+                    </td>
+                    <td>
+                        @item.AnnouncementContent
+                    </td>
+
+                    <td>
+                        @if (@item.AnnouncementStatus == Status.Aktif)
+                        {
+                <span class="badge badge-success">@item.AnnouncementStatus</span> }
+            else
+            {
+                <span class="badge badge-danger">@item.AnnouncementStatus</span>                }
+                    </td>
+                    <td class="project-actions text-right">
+
+                        <a class="btn btn-warning btn-sm" href="/AdminAnnouncement/AdminAnnouncementDetail/@item.AnnouncementID">
+                            <i class="fas fa-angle-double-left">
+                            </i>
+                            Detay
+                        </a>
+                    </td>
+                    <td class="project-actions text-right">
+
+                        <a class="btn btn-info btn-sm" href="/AdminAnnouncement/EditAnnouncement/@item.AnnouncementID">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            Güncelle
+                        </a>
+                    </td>
+                </tr>}
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

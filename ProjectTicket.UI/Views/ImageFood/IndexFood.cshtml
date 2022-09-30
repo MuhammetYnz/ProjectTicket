@@ -1,0 +1,30 @@
+﻿@using EntityLayer.Concrete
+@model List<ImageFile>
+
+@{ ViewBag.Title = "IndexFood";
+                Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
+
+<style>
+    #container {
+        justify-content: center;
+    }
+</style>
+<br />
+<div class="row" id="container">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-12">
+            <!-- Box Comment -->
+            <div class="card card-widget">
+                <div class="card-header">
+                    <strong><a>@item.ImageName</a></strong>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid pad" src="@item.ImagePath" alt="Photo">
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+

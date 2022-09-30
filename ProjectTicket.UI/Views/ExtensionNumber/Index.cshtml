@@ -1,40 +1,101 @@
 ﻿@using EntityLayer.Concrete
 @model List<User>
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_SiteLayout.cshtml";
-}
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+
+</script>
+
 <br />
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title"><strong>DAHİLİ NUMARALAR</strong></h3>
+        <h3 class="card-title"><strong>Dahili Numaralar</strong></h3>
+
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+        <input id="myInput" class="form-control" type="text" placeholder="Üye Ara..">
     </div>
-    <!-- /.card-header -->
-    <div class="card-body">
-        <table id="example2" class="table table-bordered table-hover">
+    @*<div class="row">
+            <input id="myInput" class="form-control" type="text" placeholder="Ara..">
+        </div>*@
+    <div class="card-body p-0">
+        <table class="table table-striped projects">
             <thead>
                 <tr>
-                    <th width="200px">DEPARTMAN</th>
-                    <th width="200px">AD</th>
-                    <th width="200px">SOYAD</th>
-                    <th width="200px">GÖREV</th>
-                    <th width="200px">DAHİLİ NO</th>
-                    <th width="200px">ŞİRKET NO</th>
+                    <th style="width: 150px">
+                        Resim
+                    </th>
+                    <th style="width: 500px">
+                        Departman
+                    </th>
+                    <th style="width: 800px">
+                        Ad Soyad
+                    </th>
+                    <th style="width: 500px">
+                        Mail
+                    </th>
+                    <th style="width: 500px ">
+                        Telsiz No
+                    </th>
+                    <th style="width: 500px ">
+                        Şirket No
+                    </th>                                     
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="myTable">
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>@item.Department.DepartmentName</td>
-                        <td>@item.UserName</td>
-                        <td>@item.UserLanstName</td>
-                        <td>@item.Title.TitleName</td>
-                        <td>@item.UserExtensionNumber</td>
-                        <td>@item.UserCompanyNumber</td>
-                    </tr>
-                 }
+    <tr>
+        <td>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <img alt="Avatar" class="table-avatar" src="@item.UserImage">
+                </li>
+            </ul>
+        </td>
+        <td>
+            @item.Department.DepartmentName
+        </td>
+        <td>
+            <a>
+                @item.UserName @item.UserLanstName
+            </a>
+            <br />
+            <small>
+                @item.Title.TitleName
+            </small>
+        </td>
+        <td>
+            @item.UserMail
+        </td>
+
+        
+        <td>
+            @item.UserExtensionNumber
+        </td>
+        <td>
+            @item.UserCompanyNumber
+        </td>
+        
+    </tr>}
+            </tbody>
         </table>
     </div>
     <!-- /.card-body -->
 </div>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>

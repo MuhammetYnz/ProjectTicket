@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.ImageFile
+@{
+    ViewBag.Title = "AddImageFood";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+@*<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>*@
+
+
+<style>
+    label {
+        background-color: white;
+        opacity: 0.8;
+        border-radius: 4px;
+    }
+</style>
+
+<h1>Yeni Yemek Lsitesi Ekle</h1>
+<br />
+@using (Html.BeginForm("AddImageFood", "Image", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.Label("Resim")
+        <input class="form-control " type="file" name="foodImage" accept=".jpg,.png,.jpeg" />
+        <br /><br />    
+
+        @Html.Label("Yemek Menüsü", new { @style = "color:MidnightBlue" })
+        @Html.TextBoxFor(x => x.ImageName, new { @class = "form-control", @style = "background-color:LightCyan" })
+        <br /><br />
+
+        <button class="btn btn-info" id="kaydet">Kaydet</button>
+    </div>
+}
+

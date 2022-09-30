@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
@@ -12,6 +13,7 @@ namespace ProjectTicket.UI.Controllers
     public class AdminCategoryController : Controller
     {
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        Context c = new Context();
         // GET: AdminCategory
         
         public ActionResult Index()
@@ -28,6 +30,8 @@ namespace ProjectTicket.UI.Controllers
         [HttpPost]
         public ActionResult AddCategory(Category p)
         {
+            if (c.Categories.Any(x=>x.CategoryName==p.CategoryName)) return RedirectToAction("Index");// aynı kategori eklenmesin
+           
             cm.CategoryAdd(p);
             return RedirectToAction("Index");
         }

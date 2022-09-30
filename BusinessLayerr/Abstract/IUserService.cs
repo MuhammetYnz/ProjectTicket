@@ -10,8 +10,9 @@ namespace BusinessLayer.Abstract
    public interface IUserService
     {
         List<User> GetList();
+        List<User> GetSearchList(string p);//liste içinde isime göre arama yapmak için
         void UserAdd(User user);
-        User GetByID(int id);
+        User GetByID(int id);     
         void UserDelete(User user);
         void UserUpdate(User user);
         User GetUser(string username, string password);

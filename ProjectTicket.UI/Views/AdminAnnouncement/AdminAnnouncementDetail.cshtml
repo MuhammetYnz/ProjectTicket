@@ -3,48 +3,42 @@
     ViewBag.Title = "AdminAnnouncementDetail";
     Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.CategoryName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category.CategoryName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AnnouncementName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AnnouncementName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AnnouncementContent)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AnnouncementContent)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AnnouncementDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AnnouncementDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AnnouncementStatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AnnouncementStatus)
-        </dd>
-
-    </dl>
+<style>
+    #container {
+        justify-content: center;
+    }
+</style>
+<br />
+<div class="row" id="container">
+    <div class="col-md-6">
+        <!-- Box Comment -->
+        <div class="card card-widget">
+            <div class="card-header">
+                <strong><a>@Model.AnnouncementName</a></strong>
+                <div class="card-tools">
+                    <strong><a>@(((DateTime)Model.AnnouncementDate).ToString("dd MMM yyyy"))</a></strong>
+                </div>
+            </div>
+            <div class="card-body">
+                @if (Model.AnnouncementImage != null)
+                {
+                    <img class="img-fluid pad" src="@Model.AnnouncementImage" alt="Photo">
+                }
+                else
+                {
+                    <img class="img-fluid pad" src="~/AdminLTE-3.0.4/dist/img/Wallpaper.png" alt="Photo">
+                }
+               
+            </div>
+            <div class="col-lg-12">
+                <div class="card card-widget">
+                    <div class="card-body">
+                        <p>
+                            @Model.AnnouncementContent
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

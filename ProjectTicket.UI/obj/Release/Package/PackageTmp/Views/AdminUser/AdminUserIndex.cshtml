@@ -1,0 +1,114 @@
+﻿@using EntityLayer.Concrete
+@model List<User>
+@{
+    ViewBag.Title = "AdminUserIndex";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+<br />
+<style>
+    div.card{
+        opacity:1;
+    }
+</style>
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title"><strong>Kullanıcılar</strong></h3>
+        <br />
+        <a class="btn btn-primary btn-sm" href="/AdminUser/AddUser/">
+            <i class="fas fa-folder">
+            </i>
+            Kullanıcı Ekle
+        </a>
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-striped projects">
+            <thead>
+                <tr>
+                    <th style="width: 150px">
+                        Resim
+                    </th>
+                    <th style="width: 150px">
+                        Departman
+                    </th>
+                    <th style="width: 300px">
+                        Ad Soyad
+                    </th>
+                    <th style="width: 150px">
+                        Mail
+                    </th>
+                    <th style="width: 220px" class="text-center">
+                        Durum
+                    </th>
+                    <th style="width: 150px">
+                        Telsiz No
+                    </th>
+                    <th style="width: 150px">
+                        Şirket No
+                    </th>
+                    <th style="width: 150px">
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar" src="~/AdminLTE-3.0.4/dist/img/user5-128x128.jpg">
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        @item.Department.DepartmentName
+                    </td>
+                    <td>
+                        <a>
+                            @item.UserName @item.UserLanstName
+                        </a>
+                        <br />
+                        <small>
+                            @item.Title.TitleName
+                        </small>
+                    </td>
+                    <td>
+                        @item.UserMail
+                    </td>
+
+                    <td class="project-state">
+                        @if (@item.UserStatus == Status.Aktif)
+                        {
+                            <span class="badge badge-success">@item.UserStatus</span>
+                        }
+                        else
+                        {
+                            <span class="badge badge-danger">@item.UserStatus</span>
+                        }
+                    </td>
+                    <td>
+                        @item.UserExtensionNumber
+                    </td>
+                    <td>
+                        @item.UserCompanyNumber
+                    </td>
+                    <td class="project-actions text-right">
+                        
+                        <a class="btn btn-info btn-sm" href="/AdminUser/EditUser/@item.UserID">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            Güncelle
+                        </a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

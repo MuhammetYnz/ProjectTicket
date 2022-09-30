@@ -5,31 +5,53 @@
 <br />
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title"><strong>DEPARTMANLAR</strong></h3>
+        <h3 class="card-title"><strong>Departrmanlar</strong></h3>
+        <br />
+        
+        <div class="card-tools">
+            <a class="btn btn-primary btn-sm" href="/AdminDepartment/AddDepartment/">
+                <i class="fas fa-folder">
+                </i>
+                Departman Ekle
+            </a>
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
     </div>
-    <!-- /.card-header -->
-    <div class="card-body">
-        <table id="example2" class="table table-bordered table-hover">
+    <div class="card-body p-0">
+        <table class="table table-striped projects">
             <thead>
                 <tr>
-                    @*<th>KATEGORİ</th>*@
-                    <th width="200px">DEPARTMAN</th>
-                    <th width="200px">DURUM</th>
-
+                    <th>
+                        Departman Adı
+                    </th>
+                    <th>
+                        Durum
+                    </th>
+                    <th>
+                    </th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
     <tr>
-        <td>@item.DepartmentName</td>
         <td>
-            @item.DepartmentStatus</td>      
-    </tr>
-}
+            @item.DepartmentName
+        </td>
 
+        <td>
+            @if (@item.DepartmentStatus == Status.Aktif)
+            {
+<span class="badge badge-success">@item.DepartmentStatus</span> }
+else
+{
+<span class="badge badge-danger">@item.DepartmentStatus</span>}
+        </td>
+    </tr>}
+            </tbody>
         </table>
     </div>
     <!-- /.card-body -->
 </div>
-<a href="/AdminDepartment/AddDepartment/" class="btn btn-warning">Yeni Departman</a>

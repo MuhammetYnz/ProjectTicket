@@ -1,0 +1,58 @@
+﻿@model EntityLayer.Concrete.Announcement
+@{
+    ViewBag.Title = "AddAnnouncement";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+
+<style>
+    label {
+        background-color: white;
+        opacity: 0.8;
+        border-radius: 4px;
+    }
+</style>
+
+<h1>Yeni Duyuru Ekleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("AddAnnouncement", "AdminAnnouncement", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Kategori", new { @style = "color:MidnightBlue" })
+        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control", @style = "background-color:LightCyan" })
+
+        <br /><br />
+
+        @Html.Label("Duyuru Adı", new { @style = "color:MidnightBlue" })
+        @Html.TextBoxFor(x => x.AnnouncementName, new { @class = "form-control", @style = "background-color:LightCyan" })
+        @Html.ValidationMessageFor(model => model.AnnouncementName, "", new { @class = "text-danger" })
+
+        <br /><br />
+        @Html.Label("Duyuru", new { @style = "color:MidnightBlue" })
+        @Html.TextAreaFor(x => x.AnnouncementContent, new { @class = "form-control", @style = "background-color:LightCyan" })
+        @Html.ValidationMessageFor(model => model.AnnouncementContent, "", new { @class = "text-danger" })
+
+        <br /><br />
+        @Html.Label("Tarih", new { @style = "color:MidnightBlue" })
+        @Html.EditorFor(x => x.AnnouncementDate, new
+        {
+            htmlAttributes = new { @class = "form-control datetimepicker", @style = "background-color:LightCyan" }
+})
+        @Html.ValidationMessageFor(model => model.AnnouncementDate, "", new { @class = "text-danger" })
+        <br /><br />
+
+        @Html.Label("Durum", new { @style = "color:MidnightBlue" })
+        @Html.EnumDropDownListFor(x => x.AnnouncementStatus, new { @class = "form-control", @style = "background-color:LightCyan" })
+        <br /><br />
+
+        <button class="btn btn-info" id="kaydet">Kaydet</button>
+    </div>
+}
+<script>
+    $('#kaydet').click(function () {
+        swal("Tebrikler", "Yeni kategori eklendi!", "success");
+    });
+</script>

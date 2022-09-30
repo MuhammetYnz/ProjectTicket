@@ -8,13 +8,13 @@
 
 <h1>Yeni Kullanıcı Oluştur</h1>
 <br />
-@using (Html.BeginForm("AddUser", "AdminUser", FormMethod.Post))
+@using (Html.BeginForm("AddUser", "AdminUser", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 <div class="form-group">
     @Html.HiddenFor(x => x.UserID, new { @class = "form-control" })
 
     @Html.Label("Resim")
-    @Html.TextBoxFor(x => x.UserImage, new { @class = "form-control" })
+    <input class="form-control " type="file" name="userImage" accept=".jpg,.png,.jpeg" required />
     <br />
     @Html.Label("Departman")
     @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
@@ -35,13 +35,16 @@
     @Html.TextBoxFor(x => x.UserPassword, new { @class = "form-control" })
     <br />
     @*@Html.Label("Durum")
-    @Html.EnumDropDownListFor(x => x.UserStatus, new { @class = "form-control" })*@
+        @Html.EnumDropDownListFor(x => x.UserStatus, new { @class = "form-control" })*@
     <br />
     @Html.Label("Dahili No")
     @Html.TextBoxFor(x => x.UserExtensionNumber, new { @class = "form-control" })
     <br />
     @Html.Label("Şirket No")
     @Html.TextBoxFor(x => x.UserCompanyNumber, new { @class = "form-control" })
+    <br />
+    @Html.Label("Role")
+    @Html.EnumDropDownListFor(x => x.UserRole, new { @class = "form-control" })
     <br />
     <button class="btn btn-info" id="kaydet">Kaydet</button>
 </div>}

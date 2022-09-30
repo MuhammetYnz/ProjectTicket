@@ -5,37 +5,98 @@
 <br />
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title"><strong>TALEPLER</strong></h3>
+        <h3 class="card-title"><strong>Talepler</strong></h3>
+        <br />
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
     </div>
-    <!-- /.card-header -->
-    <div class="card-body">
-        <table id="example2" class="table table-bordered table-hover">
+    <div class="card-body p-0">
+        <table class="table table-striped projects">
             <thead>
                 <tr>
-                    @*<th>KATEGORİ</th>*@
-                    <th width="200px">KATEGORİ</th>
-                    <th width="200px">KULLANICI</th>
-                    <th width="200px">TARİH</th>
-                    <th width="100px">DURUM</th>
-                    <th width="500px">AÇIKLAMA</th>
+                    <th @*style="width: 150px"*@>
+                        Resim
+                    </th>
+                    <th @*style="width: 150px"*@>
+                        Kategori
+                    </th>
+                    <th @*style="width: 200px"*@>
+                        Kullanıcı
+                    </th>
+                    <th @*style="width: 150px"*@>
+                        Tarih
+                    </th>
+                    <th @*style="width: 70px"*@>
+                        Durum
+                    </th>
+                    <th @*style="width: 220px"*@ @*class="text-center"*@>
+                        Açıklama
+                    </th>
+                    <th @*style="width: 150px"*@>
+                    </th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
                 <tr>
-                    <td>@item.Category.CategoryName</td>
                     <td>
-                        @item.User.UserName @item.User.UserLanstName
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                @if (item.User.UserImage != null)
+                                {
+                                    <img alt="Avatar" class="table-avatar" src="@item.User.UserImage">
+                                }
+                                else
+                                {
+                                    <img alt="Avatar" class="table-avatar" src="~/AdminLTE-3.0.4/dist/img/banner.jpg">
+                                }
+                                
+                            </li>
+                        </ul>
                     </td>
-                    <td>@(((DateTime)item.ContentDate).ToString("dd MMM yyyy"))</td>
-                    @*<td>@item.AnnouncementStatus</td>*@
-                    <td>@item.ContentStatus</td>
-                    <td>@item.ContentValue</td>
-                    <td><a href="/AdminContent/EditContent/@item.ContentID" class="btn btn-warning">GÜNCELLE</a></td>
-                </tr>
-                }
+                    <td>
+                        @item.Category.CategoryName
+                    </td>
+                    <td>
+                        <a>
+                            @item.User.UserName @item.User.UserLanstName
+                        </a>
+                        <br />
+                        <small>
+                            @item.User.Title.TitleName
+                        </small>
+                    </td>
+                    <td>
+                        @(((DateTime)item.ContentDate).ToString("dd MMM yyyy hh:mm"))
+                    </td>
 
+                    <td @*class="project-state"*@>
+                        @if (@item.ContentStatus == Status.Tamamlandı)
+                        {
+                <span class="badge badge-success">@item.ContentStatus</span> }
+            else
+            {
+                <span class="badge badge-danger">@item.ContentStatus</span>}
+                    </td>
+                    <td>
+                        @item.ContentValue
+                    </td>
+                    <td @*class="project-actions text-right"*@>
+
+                        <a class="btn btn-info btn-sm" href="/AdminContent/EditContent/@item.ContentID">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            Güncelle
+                        </a>
+                    </td>
+
+                </tr>
+}
+            </tbody>
         </table>
     </div>
     <!-- /.card-body -->

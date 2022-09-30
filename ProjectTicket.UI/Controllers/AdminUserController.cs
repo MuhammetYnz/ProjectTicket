@@ -5,8 +5,10 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace ProjectTicket.UI.Controllers
@@ -49,10 +51,40 @@ namespace ProjectTicket.UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditUser(User p)
+        public ActionResult EditUser(int id,User p, HttpPostedFileBase userImage)
         {
-            um.UserUpdate(p);
-            return RedirectToAction("AdminUserIndex");
+            if (ModelState.IsValid)
+            {
+                var userImageValue = um.GetByID(id);
+                if (userImage!=null)
+                {
+                    if (System.IO.File.Exists(Server.MapPath(userImageValue.UserImage)));
+                    {
+                        System.IO.File.Delete(Server.MapPath(userImageValue.UserImage));
+                    }
+                    WebImage img = new WebImage(userImage.InputStream);
+                    FileInfo imgInfo = new FileInfo(userImage.FileName);
+
+                    string userImageName = Guid.NewGuid().ToString() + imgInfo.Extension;
+                    img.Save("~/Uploads/User/" + userImageName);
+
+                    userImageValue.UserImage = "/Uploads/User/" + userImageName;
+                }
+                userImageValue.UserName = p.UserName;
+                userImageValue.UserLanstName = p.UserLanstName;
+                userImageValue.UserMail = p.UserMail;
+                userImageValue.UserPassword = p.UserPassword;
+                userImageValue.UserStatus = p.UserStatus;
+                userImageValue.UserRole = p.UserRole;
+                userImageValue.UserExtensionNumber = p.UserExtensionNumber;
+                userImageValue.UserCompanyNumber = p.UserCompanyNumber;
+                userImageValue.DepartmentID = p.DepartmentID;
+                userImageValue.TitleID = p.TitleID;
+
+                um.UserUpdate(userImageValue);
+                return RedirectToAction("AdminUserIndex");
+            }          
+            return View(p);
         }
 
         [HttpGet]
@@ -78,12 +110,21 @@ namespace ProjectTicket.UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddUser(User p)
+        public ActionResult AddUser(User p, HttpPostedFileBase userImage)
         {
             //string adminUserMailInfo = (string)Session["AdminMail"];
             //var adminUserIdInfo = c.Admins.Where(x => x.AdminMail == adminUserMailInfo).Select(y => y.AdminID).FirstOrDefault();
             //p.UserID = adminUserIdInfo;
-            p.UserStatus =Status.Aktif;
+            p.UserStatus =Status.Aktif;           
+            if (userImage!=null)
+            {
+                WebImage img = new WebImage(userImage.InputStream);
+                FileInfo imgInfo = new FileInfo(userImage.FileName);
+
+                string imgName = Guid.NewGuid().ToString() + imgInfo.Extension;
+                img.Save("~/Uploads/User/" + imgName);
+                p.UserImage = "/Uploads/User/" + imgName;
+            }
             um.UserAdd(p); 
             return RedirectToAction("AdminUserIndex");
         }

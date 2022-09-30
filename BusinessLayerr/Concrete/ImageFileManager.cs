@@ -18,9 +18,29 @@ namespace BusinessLayer.Concrete
             _ımageFıleDal = ımageFıleDal;
         }
 
+        public ImageFile GetByID(int id)
+        {
+            return _ımageFıleDal.Get(x => x.ImageID == id);
+        }
+
         public List<ImageFile> GetList()
         {
             return _ımageFıleDal.List();
+        }
+
+        public void ImageFileAdd(ImageFile ımageFile)
+        {
+            _ımageFıleDal.Insert(ımageFile);
+        }
+
+        public void ImageFileDelete(ImageFile ımageFile)
+        {
+            _ımageFıleDal.Delete(ımageFile);
+        }
+
+        public void ImageFileUpdate(ImageFile ımageFile)
+        {
+            _ımageFıleDal.Update(ımageFile);
         }
     }
 }
