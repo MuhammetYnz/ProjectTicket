@@ -17,7 +17,7 @@
     <input class="form-control " type="file" name="userImage" accept=".jpg,.png,.jpeg" required />
     <br />
     @Html.Label("Departman")
-    @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+    @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.vlc, "Lütfen departman seçiniz", new { @class = "form-control" })
     <br />
     @Html.Label("Kullanıcı Adı")
     @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", required = "required" })
@@ -26,7 +26,7 @@
     @Html.TextBoxFor(x => x.UserLanstName, new { @class = "form-control", required = "required" })
     <br />
     @Html.Label("Görev")
-    @Html.DropDownListFor(x => x.TitleID, (List<SelectListItem>)ViewBag.t, new { @class = "form-control" })
+    @Html.DropDownListFor(x => x.TitleID, (List<SelectListItem>)ViewBag.t, "Lütfen görev seçiniz", new { @class = "form-control" })
     <br />
     @Html.Label("Mail")
     @Html.TextBoxFor(x => x.UserMail, new { @class = "form-control", required = "required" })
@@ -35,8 +35,8 @@
     @Html.TextBoxFor(x => x.UserPassword, new { @class = "form-control", required = "required" })
     <br />
     @*@Html.Label("Durum")
-        @Html.EnumDropDownListFor(x => x.UserStatus, new { @class = "form-control" })*@
-    <br />
+        @Html.EnumDropDownListFor(x => x.UserStatus==EntityLayer.Concrete.Status.Aktif, new { @class = "form-control" })
+    <br />*@
     @Html.Label("Dahili No")
     @Html.TextBoxFor(x => x.UserExtensionNumber, new { @class = "form-control", required = "required" })
     <br />

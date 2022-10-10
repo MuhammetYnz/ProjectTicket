@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +17,8 @@ namespace ProjectTicket.UI.Controllers
        
         public ActionResult Index()
         {
-            var acValues = acm.GetList();
+          
+            var acValues = acm.GetList().OrderByDescending(x=>x.AnnouncementDate).ToList();
             return View(acValues);
         }
 

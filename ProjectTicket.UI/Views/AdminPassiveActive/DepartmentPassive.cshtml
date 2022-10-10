@@ -1,0 +1,40 @@
+﻿@using EntityLayer.Concrete
+@model IEnumerable<Department>
+
+<table class="table table-striped projects">
+    <thead>
+        <tr>
+            <th>
+                Departman Adı
+            </th>
+            <th>
+                Durum
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @item.DepartmentName
+    </td>
+
+    <td>
+        <span class="badge badge-danger">@item.DepartmentStatus</span>
+        
+    </td>
+    <td class="project-actions text-right">
+
+        <a class="btn btn-primary btn-sm" href="/AdminDepartment/DepartmentActive/@item.DepartmentID">
+            <i class="fas fa-check">
+            </i>
+            Aktif Et
+        </a>
+    </td>
+</tr>
+         }
+    </tbody>
+</table>

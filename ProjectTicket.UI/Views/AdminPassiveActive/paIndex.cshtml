@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "paIndex";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-widget">
+            <div class="card-header">
+                <div class="user-block">
+                    <p><strong>Kullanıcılar</strong></p>
+                </div>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-outline-primary" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+
+                </div>
+            </div>
+            <div class="card-body">
+                @Html.Action("UserPassive", "AdminPassiveActive")
+            </div>
+            <div class="card-footer card-comments">
+                <div class="card-comment">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <!-- Box Comment -->
+        <div class="card card-widget">
+            <div class="card-header">
+                <div class="user-block">
+                    <p><strong>Kullanıcı Görevleri</strong></p>
+
+                </div>
+                <!-- /.user-block -->
+                <div class="card-tools">
+                    <button type="button" class="btn btn-outline-primary" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                @Html.Action("TitlePassive", "AdminPassiveActive")
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer card-comments">
+                <div class="card-comment">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card card-widget">
+            <div class="card-header">
+                <div class="user-block">
+                    <p><strong>Kullanıcılar</strong></p>
+                </div>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-outline-primary" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+
+                </div>
+            </div>
+            <div class="card-body">
+                @Html.Action("DepartmentPassive", "AdminPassiveActive")
+            </div>
+            <div class="card-footer card-comments">
+                <div class="card-comment">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <!-- Box Comment -->
+        <div class="card card-widget">
+            <div class="card-header">
+                <div class="user-block">
+                    <p><strong>Kategoriler</strong></p>
+                </div>
+                <!-- /.user-block -->
+                <div class="card-tools">
+                    <button type="button" class="btn btn-outline-primary" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                @Html.Action("CategoryPassive", "AdminPassiveActive")
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer card-comments">
+                <div class="card-comment">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

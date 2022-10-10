@@ -58,7 +58,7 @@ namespace ProjectTicket.UI.Controllers
                 var foodImageValue = ım.GetByID(id);
                 if (foodImage != null)
                 {
-                    if (System.IO.File.Exists(Server.MapPath(foodImageValue.ImagePath)));
+                    if (System.IO.File.Exists(Server.MapPath(foodImageValue.ImagePath)))
                     {
                         System.IO.File.Delete(Server.MapPath(foodImageValue.ImagePath));
                     }

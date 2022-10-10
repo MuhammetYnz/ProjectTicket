@@ -15,12 +15,12 @@
         <br />
 
         <div class="card-tools">
-            <a class="btn btn-primary btn-sm" href="/AdminUser/AddUser/">
-                <i class="fas fa-folder">
+            <a class="btn btn-outline-primary btn-sm" href="/AdminUser/AddUser/">
+                <i class="fas fa-sync-alt fa-spin">
                 </i>
                 Kullanıcı Ekle
             </a>
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+            <button type="button" class="btn btn-outline-primary" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                 <i class="fas fa-minus"></i>
             </button>
 
@@ -61,58 +61,58 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-    <tr>
-        <td>
-            <ul class="list-inline">
-                <li class="list-inline-item">
-                    
-                 <img alt="Avatar" class="table-avatar" src="@item.UserImage">
-                    
-                </li>
-            </ul>
-        </td>
-        <td>
-            @item.Department.DepartmentName
-        </td>
-        <td>
-            <a>
-                @item.UserName @item.UserLanstName
-            </a>
-            <br />
-            <small>
-                @item.Title.TitleName
-            </small>
-        </td>
-        <td>
-            @item.UserMail
-        </td>
+                <tr>
+                    <td>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
 
-        <td class="project-state">
-            @if (@item.UserStatus == Status.Aktif)
+                                <img alt="Avatar" class="table-avatar" src="@item.UserImage">
+
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        @item.Department.DepartmentName
+                    </td>
+                    <td>
+                        <a>
+                            @item.UserName @item.UserLanstName
+                        </a>
+                        <br />
+                        
+                    </td>
+                    <td>
+                        @item.UserMail
+                    </td>
+
+                    <td class="project-state">
+                        @if (@item.UserStatus == Status.Aktif)
+                        {
+                <span class="badge badge-success">@item.UserStatus</span> }
+            else
             {
-<span class="badge badge-success">@item.UserStatus</span> }
-else
-{
-<span class="badge badge-danger">@item.UserStatus</span>}
-        </td>
-        <td>
-            @item.UserExtensionNumber
-        </td>
-        <td>
-            @item.UserCompanyNumber
-        </td>
-        <td>
-            @item.UserRole
-        </td>
-        <td class="project-actions text-right">
+                <span class="badge badge-danger">@item.UserStatus</span>}
+                    </td>
+                    <td>
+                        @item.UserExtensionNumber
+                    </td>
+                    <td>
+                        @item.UserCompanyNumber
+                    </td>
+                    <td>
+                        @item.UserRole
+                    </td>
+                    <td class="project-actions text-right">
 
-            <a class="btn btn-info btn-sm" href="/AdminUser/EditUser/@item.UserID">
-                <i class="fas fa-pencil-alt">
-                </i>
-                Güncelle
-            </a>
-        </td>
-    </tr>}
+                        <a class="btn btn-info btn-sm" href="/AdminUser/EditUser/@item.UserID">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            Güncelle
+                        </a>
+                    </td>
+                    
+                </tr>
+                }
             </tbody>
         </table>
     </div>

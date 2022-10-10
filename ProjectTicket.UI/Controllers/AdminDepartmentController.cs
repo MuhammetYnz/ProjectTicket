@@ -33,5 +33,13 @@ namespace ProjectTicket.UI.Controllers
             dm.DepartmentAdd(p);
             return RedirectToAction("DepartmentIndex");
         }
+
+        public ActionResult DepartmentActive(int id)
+        {
+            var dpValue = dm.GetByID(id);
+            dpValue.DepartmentStatus = Status.Aktif;
+            dm.DepartmentUpdate(dpValue);
+            return RedirectToAction("paIndex","AdminPassiveActive");
+        }
     }
 }

@@ -1,0 +1,92 @@
+﻿@using EntityLayer.Concrete
+@model IEnumerable<Deliver>
+@{ ViewBag.Title = "DeliverIndex";
+Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
+<br />
+
+<br />
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title"><strong>Zimmetler</strong></h3>
+        <br />
+
+        <div class="card-tools">
+            
+            <button type="button" class="btn btn-outline-primary" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-striped projects">
+            <thead>
+                <tr>
+                    <th>
+                        Tarih
+                    </th>
+                    <th>
+                        Ad Soyad
+                    </th>
+                    <th>
+                        Adet
+                    </th>
+                    <th>
+                        Marka
+                    </th>
+                    <th>
+                        Model
+                    </th>
+                    <th>
+                        Seri No
+                    </th>
+                    <th>
+                        Durum
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+    <tr>
+        <td>
+            @(((DateTime)item.DeliverDate).ToString("dd MMM yyyy hh:mm"))
+        </td>
+        <td>
+            @item.User.UserName  @item.User.UserLanstName
+        </td>
+        <td>
+            @item.Quantity
+        </td>
+        <td>
+            @item.Brand
+        </td>
+        <td>
+            @item.Modell
+        </td>
+        <td>
+            @item.SerialNumber
+        </td>
+
+        <td>
+            @if (@item.DeliverStatus == Status.Aktif)
+            {
+<span class="badge badge-success">@item.DeliverStatus</span> }
+else
+{
+<span class="badge badge-danger">@item.DeliverStatus</span>}
+        </td>
+
+        <td class="project-actions text-right">
+
+            <a class="btn btn-info btn-sm" href="/Deliver/AdminDeliverDetail/@item.DeliverID">
+                <i class="fas fa-pencil-alt">
+                </i>
+                Detay
+            </a>
+        </td>
+    </tr>}
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

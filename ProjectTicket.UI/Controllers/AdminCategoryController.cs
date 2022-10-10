@@ -56,5 +56,13 @@ namespace ProjectTicket.UI.Controllers
             cm.CategoryUpdate(p);
             return RedirectToAction("Index");
         }
+
+        public ActionResult CategoryActive(int id)
+        {
+            var ctValue = cm.GetByID(id);
+            ctValue.CategoryStatus = Status.Aktif;
+            cm.CategoryUpdate(ctValue);
+            return RedirectToAction("paIndex", "AdminPassiveActive");
+        }
     }
 }

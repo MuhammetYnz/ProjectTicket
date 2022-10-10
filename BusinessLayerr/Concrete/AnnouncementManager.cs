@@ -40,7 +40,7 @@ namespace BusinessLayer.Concrete
 
         public List<Announcement> GetList()
         {
-            return _announcementDal.List();
+            return _announcementDal.List(x=>x.AnnouncementStatus==Status.Aktif);
         }
     }
 

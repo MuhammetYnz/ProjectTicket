@@ -16,6 +16,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<ImageFile> ımageFiles { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Title> Titles { get; set; }
+        public DbSet<Deliver> Delivers { get; set; }
        
     }
 }

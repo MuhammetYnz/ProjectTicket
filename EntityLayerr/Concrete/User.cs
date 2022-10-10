@@ -1,5 +1,5 @@
 ﻿
-using EntityLayerr.Concrete;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -21,8 +21,10 @@ namespace EntityLayer.Concrete
         public string UserCompanyNumber { get; set; }
         //public string UserTitle { get; set; }
         public string UserImage { get; set; }
+        public DateTime UserDateOfStart { get; set; }
 
         public ICollection<Content> Contents { get; set; }
+        public ICollection<Deliver> Delivers { get; set; }
 
         public int DepartmentID { get; set; }
         public virtual Department Department { get; set; }

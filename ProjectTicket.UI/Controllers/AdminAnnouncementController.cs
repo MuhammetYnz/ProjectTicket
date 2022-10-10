@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
@@ -15,11 +16,13 @@ namespace ProjectTicket.UI.Controllers
     {
         AnnouncementManager acm = new AnnouncementManager(new EfAnnouncementDal());
         CategoryManager ctm = new CategoryManager(new EfCategoryDal());
+        Context context = new Context();
         // GET: AdminAnnouncement
        
         public ActionResult Index()
         {
-            var acmValues = acm.GetList();
+            
+            var acmValues = acm.GetList().OrderByDescending(x=>x.AnnouncementDate).ToList();
             return View(acmValues);
         }
 
@@ -43,6 +46,7 @@ namespace ProjectTicket.UI.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult AddAnnouncement(Announcement p, HttpPostedFileBase ancImage)
         {
             p.AnnouncementStatus = Status.Aktif;
@@ -74,7 +78,7 @@ namespace ProjectTicket.UI.Controllers
                 var acmImageValue = acm.GetByID(id);
                 if (ancImage != null)
                 {
-                    if (System.IO.File.Exists(Server.MapPath(acmImageValue.AnnouncementImage))) ;
+                    if (System.IO.File.Exists(Server.MapPath(acmImageValue.AnnouncementImage))) 
                     {
                         System.IO.File.Delete(Server.MapPath(acmImageValue.AnnouncementImage));
                     }

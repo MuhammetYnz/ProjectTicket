@@ -11,6 +11,7 @@ namespace BusinessLayer.Abstract
    public interface ITitleService
     {
         List<Title> GetList();
+        List<Title> GetListPassive();
         void TitletAdd(Title title);
         Title GetByID(int id);
         void TitleDelete(Title title);

@@ -1,5 +1,5 @@
 ﻿@using EntityLayer.Concrete
-@model List<Announcement>
+@model IEnumerable<Announcement>
 
 @{ ViewBag.Title = "Index";
                 Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
@@ -9,7 +9,7 @@
         <h3 class="card-title"><strong>Duyuru</strong></h3>
 
         <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+            <button type="button" class="btn btn-outline-primary" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                 <i class="fas fa-minus"></i>
             </button>
         </div>
@@ -60,9 +60,19 @@
             @item.AnnouncementName
         </td>
         <td>
-            @item.AnnouncementContent
+            @if (item.AnnouncementContent.Length > 100)
+            {
+               @Html.Raw(@item.AnnouncementContent.Substring(0, 100)) <a>...</a>
+                
+            }
+            else
+            {
+               @Html.Raw(@item.AnnouncementContent)
+            }
+
         </td>
-        <td class="project-actions @*text-right*@">
+    
+            <td class="project-actions @*text-right*@">
 
             <a class="btn btn-warning btn-sm" href="/Announcement/AnnouncementDetail/@item.AnnouncementID">
                 <i class="fas fa-angle-double-left">

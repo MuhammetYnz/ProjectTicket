@@ -58,7 +58,7 @@ namespace ProjectTicket.UI.Controllers
                 var userImageValue = um.GetByID(id);
                 if (userImage!=null)
                 {
-                    if (System.IO.File.Exists(Server.MapPath(userImageValue.UserImage)));
+                    if (System.IO.File.Exists(Server.MapPath(userImageValue.UserImage)))
                     {
                         System.IO.File.Delete(Server.MapPath(userImageValue.UserImage));
                     }
@@ -115,7 +115,7 @@ namespace ProjectTicket.UI.Controllers
             //string adminUserMailInfo = (string)Session["AdminMail"];
             //var adminUserIdInfo = c.Admins.Where(x => x.AdminMail == adminUserMailInfo).Select(y => y.AdminID).FirstOrDefault();
             //p.UserID = adminUserIdInfo;
-            p.UserStatus =Status.Aktif;           
+            p.UserStatus = Status.Aktif;
             if (userImage!=null)
             {
                 WebImage img = new WebImage(userImage.InputStream);
@@ -125,8 +125,17 @@ namespace ProjectTicket.UI.Controllers
                 img.Save("~/Uploads/User/" + imgName);
                 p.UserImage = "/Uploads/User/" + imgName;
             }
+            
             um.UserAdd(p); 
             return RedirectToAction("AdminUserIndex");
+        }
+
+        public ActionResult UserActive(int id)
+        {
+            var usrValue = um.GetByID(id);
+            usrValue.UserStatus = Status.Aktif;
+            um.UserUpdate(usrValue);
+            return RedirectToAction("paIndex", "AdminPassiveActive");
         }
     }
 }

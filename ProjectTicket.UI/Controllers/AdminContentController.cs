@@ -16,7 +16,8 @@ namespace ProjectTicket.UI.Controllers
         
         public ActionResult Index()
         {
-            var values = cm.GetList();
+            //um.GetList().OrderByDescending(x => x.UserID).Take(6).ToList();
+            var values = cm.GetList().OrderByDescending(x=>x.ContentDate).ToList();
             return View(values);
         }
         
@@ -28,6 +29,7 @@ namespace ProjectTicket.UI.Controllers
         }
         
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult EditContent(Content p)
         {
             cm.ContentUpdate(p);

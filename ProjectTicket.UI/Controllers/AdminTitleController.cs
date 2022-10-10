@@ -45,5 +45,13 @@ namespace ProjectTicket.UI.Controllers
             tm.TitleUpdate(p);
             return RedirectToAction("TitleIndex");
         }
+
+        public ActionResult TitleActive(int id)
+        {
+            var titValue = tm.GetByID(id);
+            titValue.Status = Status.Aktif;
+            tm.TitleUpdate(titValue);
+            return RedirectToAction("paIndex", "AdminPassiveActive");
+        }
     }
 }

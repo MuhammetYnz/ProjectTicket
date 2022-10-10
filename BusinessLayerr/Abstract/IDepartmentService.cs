@@ -10,6 +10,7 @@ namespace BusinessLayer.Abstract
    public interface IDepartmentService
     {
         List<Department> GetList();
+        List<Department> GetListPassive();
         void DepartmentAdd(Department department);
         Department GetByID(int id);
         void DepartmentDelete(Department department);

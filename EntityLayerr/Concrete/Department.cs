@@ -14,6 +14,7 @@ namespace EntityLayer.Concrete
         public Status DepartmentStatus { get; set; }
 
         public ICollection<User> Users { get; set; }
+        //public ICollection<Deliver> Delivers { get; set; }
 
     }
 }

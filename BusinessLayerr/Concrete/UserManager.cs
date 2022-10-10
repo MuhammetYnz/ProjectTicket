@@ -25,7 +25,12 @@ namespace BusinessLayer.Abstract
 
         public List<User> GetList()
         {
-            return _userDal.List();
+            return _userDal.List(x=>x.UserStatus==Status.Aktif);
+        }
+
+        public List<User> GetListPassive()
+        {
+            return _userDal.List(x => x.UserStatus == Status.Pasif);
         }
 
         public List<User> GetSearchList(string p)

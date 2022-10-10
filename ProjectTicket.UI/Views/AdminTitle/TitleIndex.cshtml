@@ -1,5 +1,5 @@
 ﻿@using EntityLayer.Concrete
-@model List<Title>
+@model IEnumerable<Title>
 @{ ViewBag.Title = "TitleIndex";
                 Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
 
@@ -10,12 +10,12 @@
         <br />
         
         <div class="card-tools">
-            <a class="btn btn-primary btn-sm" href="/AdminTitle/AddTitle/">
-                <i class="fas fa-folder">
+            <a class="btn btn-outline-primary btn-sm" href="/AdminTitle/AddTitle/">
+                <i class="fas fa-sync-alt fa-spin">
                 </i>
                 Görev Ekle
             </a>
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+            <button type="button" class="btn btn-outline-primary" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                 <i class="fas fa-minus"></i>
             </button>
         </div>

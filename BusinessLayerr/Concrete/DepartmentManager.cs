@@ -40,7 +40,12 @@ namespace BusinessLayer.Concrete
 
         public List<Department> GetList()
         {
-            return _departmentDal.List();
+            return _departmentDal.List(x=>x.DepartmentStatus==Status.Aktif);
+        }
+
+        public List<Department> GetListPassive()
+        {
+            return _departmentDal.List(x => x.DepartmentStatus == Status.Pasif);
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿@using EntityLayer.Concrete
-@model List<Content>
+@model IEnumerable<Content>
 @{ ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
 <br />
@@ -8,7 +8,7 @@
         <h3 class="card-title"><strong>Talepler</strong></h3>
         <br />
         <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+            <button type="button" class="btn btn-outline-primary" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                 <i class="fas fa-minus"></i>
             </button>
         </div>
@@ -30,10 +30,11 @@
                         Tarih
                     </th>
                     <th @*style="width: 70px"*@>
-                        Durum
+                        Açıklama
                     </th>
                     <th @*style="width: 220px"*@ @*class="text-center"*@>
-                        Açıklama
+                        
+                        Durum
                     </th>
                     <th @*style="width: 150px"*@>
                     </th>
@@ -54,7 +55,7 @@
                                 {
                                     <img alt="Avatar" class="table-avatar" src="~/AdminLTE-3.0.4/dist/img/banner.jpg">
                                 }
-                                
+
                             </li>
                         </ul>
                     </td>
@@ -73,18 +74,18 @@
                     <td>
                         @(((DateTime)item.ContentDate).ToString("dd MMM yyyy hh:mm"))
                     </td>
-
+                    <td>
+                       @Html.Raw(@item.ContentValue)
+                    </td>
                     <td @*class="project-state"*@>
                         @if (@item.ContentStatus == Status.Tamamlandı)
                         {
-                <span class="badge badge-success">@item.ContentStatus</span> }
-            else
-            {
-                <span class="badge badge-danger">@item.ContentStatus</span>}
+                            <span class="badge badge-success">@item.ContentStatus</span> }
+                        else
+                        {
+                            <span class="badge badge-danger">@item.ContentStatus</span>}
                     </td>
-                    <td>
-                        @item.ContentValue
-                    </td>
+
                     <td @*class="project-actions text-right"*@>
 
                         <a class="btn btn-info btn-sm" href="/AdminContent/EditContent/@item.ContentID">

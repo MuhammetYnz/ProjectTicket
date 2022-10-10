@@ -54,6 +54,7 @@
     <Compile Include="Abstract\IAnnouncementDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
+    <Compile Include="Abstract\IDeliverDal.cs" />
     <Compile Include="Abstract\IDepartmentDal.cs" />
     <Compile Include="Abstract\IImageFıleDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="EntityFramework\EfAnnouncementDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
+    <Compile Include="EntityFramework\EfDeliverDal.cs" />
     <Compile Include="EntityFramework\EfDepartmentDal.cs" />
     <Compile Include="EntityFramework\EfImageFileDal.cs" />
     <Compile Include="EntityFramework\EfTitleDal.cs" />

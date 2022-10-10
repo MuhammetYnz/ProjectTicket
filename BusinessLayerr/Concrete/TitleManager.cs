@@ -26,7 +26,12 @@ namespace BusinessLayer.Concrete
 
         public List<Title> GetList()
         {
-            return _title.List();
+            return _title.List(x=>x.Status==Status.Aktif);
+        }
+
+        public List<Title> GetListPassive()
+        {
+            return _title.List(x => x.Status == Status.Pasif);
         }
 
         public void TitleDelete(Title title)

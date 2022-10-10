@@ -5,16 +5,16 @@
 <br />
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title"><strong>Departrmanlar</strong></h3>
+        <h3 class="card-title"><strong>Departmanlar</strong></h3>
         <br />
         
         <div class="card-tools">
-            <a class="btn btn-primary btn-sm" href="/AdminDepartment/AddDepartment/">
-                <i class="fas fa-folder">
+            <a class="btn btn-outline-primary btn-sm" href="/AdminDepartment/AddDepartment/">
+                <i class="fas fa-sync-alt fa-spin">
                 </i>
                 Departman Ekle
             </a>
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+            <button type="button" class="btn btn-outline-primary" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                 <i class="fas fa-minus"></i>
             </button>
         </div>
@@ -44,12 +44,16 @@
         <td>
             @if (@item.DepartmentStatus == Status.Aktif)
             {
-<span class="badge badge-success">@item.DepartmentStatus</span> }
+<span class="badge badge-success">@item.DepartmentStatus</span> 
+            }
 else
 {
-<span class="badge badge-danger">@item.DepartmentStatus</span>}
+<span class="badge badge-danger">@item.DepartmentStatus</span>
+            }
         </td>
-    </tr>}
+
+    </tr>
+    }
             </tbody>
         </table>
     </div>

@@ -7,6 +7,12 @@
 <script src="~/Scripts/jquery-3.3.1.js"></script>
 <script src="~/Scripts/bootstrap.min.js"></script>
 
+<script src="~/Content/ckeditor_4.16.0_standard/ckeditor/ckeditor.js"></script>
+@*<link href="~/Content/ckeditor_4.16.0_standard/ckeditor/contents.css" rel="stylesheet" />*@
+
+<script type="text/javascript">
+    CKEDITOR.replace('editor')
+</script>
 
 <style>
     label {
@@ -20,30 +26,32 @@
 <br />
 @using (Html.BeginForm("AddAnnouncement", "AdminAnnouncement", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-<div class="form-group">
-    @Html.Label("Resim")
-    <input class="form-control " type="file" name="ancImage" accept=".jpg,.png,.jpeg" />
-    <br /><br />
-    @Html.Label("Kategori", new { @style = "color:MidnightBlue" })
-    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control", @style = "background-color:LightCyan" })
+    <div class="form-group">
+        @Html.Label("Resim")
+        <input class="form-control " type="file" name="ancImage" accept=".jpg,.png,.jpeg" />
+        <br /><br />
+        @Html.Label("Kategori", new { @style = "color:MidnightBlue" })
+        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control", @style = "background-color:LightCyan" })
 
-    <br /><br />
+        <br /><br />
 
-    @Html.Label("Duyuru Adı", new { @style = "color:MidnightBlue" })
-    @Html.TextBoxFor(x => x.AnnouncementName, new { @class = "form-control", @style = "background-color:LightCyan",required = "required" })
+        @Html.Label("Duyuru Adı", new { @style = "color:MidnightBlue" })
+        @Html.TextBoxFor(x => x.AnnouncementName, new { @class = "form-control", @style = "background-color:LightCyan", required = "required" })
 
 
-    <br /><br />
-    @Html.Label("Duyuru", new { @style = "color:MidnightBlue" })
-    @Html.TextAreaFor(x => x.AnnouncementContent, new { @class = "form-control", @style = "background-color:LightCyan", required = "required" })
+        <br /><br />
+        @Html.Label("Duyuru")
+        <textarea name="AnnouncementContent" class="ckeditor" required></textarea>
+        @*@Html.Label("Duyuru", new { @style = "color:MidnightBlue" })
+            @Html.TextAreaFor(x => x.AnnouncementContent, new { @class = "form-control", @style = "background-color:LightCyan", required = "required" })*@
 
-    <br /><br />
-    @Html.Label("Tarih")
-    <input class="fake-date " type="datetime-local" name="AnnouncementDate" value="" required/>
-    <br /><br />
+        <br /><br />
+        @Html.Label("Tarih")
+        <input class="fake-date " type="datetime-local" name="AnnouncementDate" value="" required />
+        <br /><br />
 
-    <button class="btn btn-info" id="kaydet">Kaydet</button>
-</div>
+        <button class="btn btn-info" id="kaydet">Kaydet</button>
+    </div>
 }
 <script>
     $('#kaydet').click(function () {

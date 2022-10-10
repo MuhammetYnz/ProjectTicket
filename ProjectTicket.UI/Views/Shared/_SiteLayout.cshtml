@@ -17,7 +17,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    @*<link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />*@
+   
     <style>
         div.row .col-lg-3.col-6 {
             opacity: 0.6;
@@ -50,8 +50,6 @@ to get the desired effect
             </a>
             <!-- Sidebar -->
             <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                @*@Html.Partial("_LoginPartial")*@
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     @Html.Action("UserLoginPartial", "UserLogin")
                 </div>
@@ -75,63 +73,83 @@ to get the desired effect
                             </a>
 
                         </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Deliver/DeliverIndex/" class="nav-link">
+                                <i class="nav-icon fas fa-address-card"></i>
+                                <p>
+                                    Zimmetlerim
+                                </p>
+                            </a>
+
+                        </li>
                         @if (User.IsInRole("Yönetici"))
                         {
-            <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon far fa-plus-square"></i>
-                    <p>
-                        Yönetim Alanı
-                        <i class="fas fa-angle-left right"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="/AdminContent/Index/" class="nav-link">
-                            <i class="fas fa-hand-point-up nav-icon"></i>
-                            <p>Talepler</p>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon far fa-plus-square"></i>
+                            <p>
+                                Yönetim Alanı
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/AdminAnnouncement/Index/" class="nav-link">
-                            <i class="fas fa-comment nav-icon"></i>
-                            <p>Duyurular</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/AdminUser/AdminUserIndex/" class="nav-link">
-                            <i class="fas fa-handshake nav-icon"></i>
-                            <p>Kullanıcılar</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/AdminTitle/TitleIndex/" class="nav-link">
-                            <i class="fas fa-bookmark nav-icon"></i>
-                            <p>Kullanıcı Görevleri</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/AdminDepartment/DepartmentIndex/" class="nav-link">
-                            <i class="fas fa-id-card-alt nav-icon"></i>
-                            <p>Departmanlar</p>
-                        </a>
-                    </li>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/AdminContent/Index/" class="nav-link">
+                                    <i class="fas fa-hand-point-up nav-icon"></i>
+                                    <p>Talepler</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/AdminAnnouncement/Index/" class="nav-link">
+                                    <i class="fas fa-comment nav-icon"></i>
+                                    <p>Duyurular</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/AdminUser/AdminUserIndex/" class="nav-link">
+                                    <i class="fas fa-handshake nav-icon"></i>
+                                    <p>Kullanıcılar</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/AdminTitle/TitleIndex/" class="nav-link">
+                                    <i class="fas fa-bookmark nav-icon"></i>
+                                    <p>Kullanıcı Görevleri</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/AdminDepartment/DepartmentIndex/" class="nav-link">
+                                    <i class="fas fa-id-card-alt nav-icon"></i>
+                                    <p>Departmanlar</p>
+                                </a>
+                            </li>
 
-                    <li class="nav-item">
-                        <a href="/AdminCategory/Index/" class="nav-link">
-                            <i class="fa fa-outdent nav-icon"></i>
-                            <p>Kategoriler</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/AdminImage/FoodIndex/" class="nav-link">
-                            <i class="fas fa-bread-slice nav-icon"></i>
-                            <p>Yemek Listesi</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-}
+                            <li class="nav-item">
+                                <a href="/AdminCategory/Index/" class="nav-link">
+                                    <i class="fa fa-outdent nav-icon"></i>
+                                    <p>Kategoriler</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/AdminImage/FoodIndex/" class="nav-link">
+                                    <i class="fas fa-bread-slice nav-icon"></i>
+                                    <p>Yemek Listesi</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/AdminPassiveActive/paIndex/" class="nav-link">
+                                    <i class="fas fa-paste nav-icon"></i>
+                                    <p>Pasif Liste</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/AdminDeliver/AdminDeliverIndex/" class="nav-link">
+                                    <i class="fas fa-paste nav-icon"></i>
+                                    <p>Zimmetler</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>            }
                         <li class="nav-item has-treeview">
                             <a href="/UserLogin/LogOut/" class="nav-link">
                                 <i class="nav-icon fas fa-door-open "></i>
@@ -188,11 +206,13 @@ to get the desired effect
     <!-- ChartJS -->
     <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
 
-    <script src="~/Scripts/moment.min.js"></script>
-    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    
+
+    @*<script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>*@
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery-2.0.0.min.js"></script>
-    <script src="~/Scripts/CustomScript.js"></script>
+    @*<script src="~/Scripts/CustomScript.js"></script>*@
     <!-- PAGE SCRIPTS -->
     <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard2.js"></script>
 </body>
