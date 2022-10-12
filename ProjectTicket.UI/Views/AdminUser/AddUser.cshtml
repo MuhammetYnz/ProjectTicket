@@ -16,6 +16,9 @@
     @Html.Label("Resim")
     <input class="form-control " type="file" name="userImage" accept=".jpg,.png,.jpeg" required />
     <br />
+    @Html.Label("Kullanıcı İş Başı Tarihi")
+    @Html.TextBoxFor(x => x.UserDateOfStart, new { @class = "form-control", required = "required" })
+    <br />
     @Html.Label("Departman")
     @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.vlc, "Lütfen departman seçiniz", new { @class = "form-control" })
     <br />
@@ -35,8 +38,8 @@
     @Html.TextBoxFor(x => x.UserPassword, new { @class = "form-control", required = "required" })
     <br />
     @*@Html.Label("Durum")
-        @Html.EnumDropDownListFor(x => x.UserStatus==EntityLayer.Concrete.Status.Aktif, new { @class = "form-control" })
-    <br />*@
+            @Html.EnumDropDownListFor(x => x.UserStatus==EntityLayer.Concrete.Status.Aktif, new { @class = "form-control" })
+        <br />*@
     @Html.Label("Dahili No")
     @Html.TextBoxFor(x => x.UserExtensionNumber, new { @class = "form-control", required = "required" })
     <br />

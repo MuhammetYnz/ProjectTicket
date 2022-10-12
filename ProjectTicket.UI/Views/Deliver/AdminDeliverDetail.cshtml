@@ -1,94 +1,41 @@
-﻿@using EntityLayer.Concrete
-@model List<Deliver>
-@{
-    ViewBag.Title = "AdminDeliverDetail";
-    Layout = "~/Views/Shared/_SiteLayout.cshtml";
-}
+﻿@model EntityLayer.Concrete.Deliver
 
-<div class="row">
-    <div class="col-md-12">
+@{ ViewBag.Title = "AdminDeliverDetail";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
+
+<style>
+    #container {
+        justify-content: center;
+    }
+</style>
+<br />
+<div class="row" id="container">
+    <div class="col-md-6">
         <!-- Box Comment -->
         <div class="card card-widget">
             <div class="card-header">
-                <div class="user-block">
-                    <img src="~/AdminLTE-3.0.4/dist/img/user1-128x128.jpg" alt="User Image">
-                    <span><a>@ViewBag.n @ViewBag.ln</a></span>
-                </div>
+                <strong><a>@Model.DeliverName</a></strong>
                 <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                        <i class="fas fa-minus"></i>
-                    </button>
+                    <strong><a>@(((DateTime)Model.DeliverDate).ToString("dd MMM yyyy"))</a></strong>
                 </div>
             </div>
             <div class="card-body">
+                @if (Model.DeliverImagePath != null)
+                {
+    <img class="img-fluid pad" src="@Model.DeliverImagePath" alt="Photo"> }
+                else
+                {
+    <img class="img-fluid pad" src="~/AdminLTE-3.0.4/dist/img/Wallpaper.png" alt="Photo">}
 
-                <table class="table table-striped projects">
-                    <thead>
-                        <tr>
-                            <th>
-                                Tarih
-                            </th>
-                            <th>
-                                Adet
-                            </th>
-                            <th>
-                                Marka
-                            </th>
-                            <th>
-                                Model
-                            </th>
-                            <th>
-                                Seri No
-                            </th>
-                            <th>
-                                Durum
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-
-
-                        <tr>
-                            <td>
-                                @item.DeliverDate
-                            </td>
-                            <td>
-                                @item.Quantity
-                            </td>
-                            <td>
-                                @item.Brand
-                            </td>
-                            <td>
-                                @item.Modell
-                            </td>
-                            <td>
-                                @item.SerialNumber
-                            </td>
-                            <td>
-                                <span class="badge badge-danger">@item.DeliverStatus</span>
-                            </td>
-                        </tr>
-            }
-                    </tbody>
-                </table>
             </div>
-            <div class="card-footer card-comments">
-                <div class="card-comment">
-                  
-        @*@item.User.Department.DepartmentName*@
+            <div class="col-lg-12">
+                <div class="card card-widget">
+                    <div class="card-body">
+                        <p>
+                            
+                        </p>
+                    </div>
                 </div>
-
-                <div class="card-comment">
-                   
-                    
-        @*@item.User.Title.TitleName}*@
-
-                </div>
-            </div>
-            <div class="card-footer">
-                @*@ViewBag.dos*@
             </div>
         </div>
     </div>

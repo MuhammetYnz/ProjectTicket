@@ -1,5 +1,8 @@
 ﻿@using EntityLayer.Concrete
-@model IEnumerable<Content>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Content>
+
 @{ ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
 <br />
@@ -32,7 +35,7 @@
                     <th @*style="width: 70px"*@>
                         Açıklama
                     </th>
-                    <th @*style="width: 220px"*@ @*class="text-center"*@>
+                    <th >
                         
                         Durum
                     </th>
@@ -102,3 +105,8 @@
     </div>
     <!-- /.card-body -->
 </div>
+
+    @Html.PagedListPager((IPagedList)Model, p => Url.Action("Index", new { p }), new PagedListRenderOptions
+   {
+       LiElementClasses = new List<string> { "page-link" }
+   })

@@ -25,22 +25,13 @@
             <thead>
                 <tr>
                     <th>
+                        
+                    </th>
+                    <th>
                         Tarih
                     </th>
                     <th>
                         Ad Soyad
-                    </th>
-                    <th>
-                        Adet
-                    </th>
-                    <th>
-                        Marka
-                    </th>
-                    <th>
-                        Model
-                    </th>
-                    <th>
-                        Seri No
                     </th>
                     <th>
                         Durum
@@ -52,24 +43,18 @@
                 {
                 <tr>
                     <td>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <img class="table-avatar" src="@item.DeliverImagePath" alt="Feza">
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
                         @(((DateTime)item.DeliverDate).ToString("dd MMM yyyy hh:mm"))
                     </td>
                     <td>
                         @item.User.UserName  @item.User.UserLanstName
                     </td>
-                    <td>
-                        @item.Quantity
-                    </td>
-                    <td>
-                        @item.Brand
-                    </td>
-                    <td>
-                        @item.Modell                    
-                    </td>
-                    <td>
-                        @item.SerialNumber
-                    </td>
-
                     <td>
                         @if (@item.DeliverStatus == Status.Aktif)
                         {

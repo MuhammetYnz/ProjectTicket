@@ -7,11 +7,10 @@ Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
 <br />
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title"><strong>Zimmetler</strong></h3>
+        <h3 class="card-title"><strong>Zimmetlerim</strong></h3>
         <br />
 
         <div class="card-tools">
-            
             <button type="button" class="btn btn-outline-primary" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                 <i class="fas fa-minus"></i>
             </button>
@@ -22,22 +21,13 @@ Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
             <thead>
                 <tr>
                     <th>
+
+                    </th>
+                    <th>
                         Tarih
                     </th>
                     <th>
                         Ad Soyad
-                    </th>
-                    <th>
-                        Adet
-                    </th>
-                    <th>
-                        Marka
-                    </th>
-                    <th>
-                        Model
-                    </th>
-                    <th>
-                        Seri No
                     </th>
                     <th>
                         Durum
@@ -49,24 +39,18 @@ Layout = "~/Views/Shared/_SiteLayout.cshtml"; }
                 {
     <tr>
         <td>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <img class="table-avatar" src="@item.DeliverImagePath" alt="Feza">
+                </li>
+            </ul>
+        </td>
+        <td>
             @(((DateTime)item.DeliverDate).ToString("dd MMM yyyy hh:mm"))
         </td>
         <td>
             @item.User.UserName  @item.User.UserLanstName
         </td>
-        <td>
-            @item.Quantity
-        </td>
-        <td>
-            @item.Brand
-        </td>
-        <td>
-            @item.Modell
-        </td>
-        <td>
-            @item.SerialNumber
-        </td>
-
         <td>
             @if (@item.DeliverStatus == Status.Aktif)
             {

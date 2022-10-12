@@ -6,50 +6,27 @@
 }
 
 <h2>Yeni Zimmet Alanı</h2>
- 
-@using (Html.BeginForm())
+
+@using (Html.BeginForm("AddDeliver", "AdminDeliver", FormMethod.Post,new { enctype = "multipart/form-data" }))
 {
     @*@Html.AntiForgeryToken()*@
-
-<div class="form-horizontal">
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     @Html.Label("Kullanıcı Adı Soyadı")
     @*@Html.DropDownList("UserID",(SelectList)ViewBag.nameLastName, "Lütfen Kullanıcı Seçiniz", new { @class = "form-control" })*@
     @*@Html.Label("Kullanıcı Soyadı")*@
-        @Html.DropDownListFor(x => x.UserID, (List<SelectListItem>)ViewBag.vUsrName,"Kullanıcı seçiniz...", new { @class = "form-control", required = "required"})
+    @Html.DropDownListFor(x => x.UserID, (List<SelectListItem>)ViewBag.vUsrName, "Kullanıcı seçiniz...", new { @class = "form-control", required = "required" })
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Brand, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.DeliverName, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Brand, new { htmlAttributes = new { @class = "form-control", required = "required" } })
-            @Html.ValidationMessageFor(model => model.Brand, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.DeliverName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @Html.ValidationMessageFor(model => model.DeliverName, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Modell, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Modell, new { htmlAttributes = new { @class = "form-control", required = "required" } })
-            @Html.ValidationMessageFor(model => model.Modell, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.SerialNumber, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.SerialNumber, new { htmlAttributes = new { @class = "form-control", required = "required" } })
-            @Html.ValidationMessageFor(model => model.SerialNumber, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" , required = "required" } })
-            @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
-        </div>
+        @Html.Label("Resim")
+        <input class="form-control " type="file" name="deliverImage" accept=".jpg,.png,.jpeg" required />
     </div>
 
     <div class="form-group">
@@ -61,5 +38,4 @@
     </div>
 
     <button class="btn btn-success">Zimmetle</button>
-</div>
 }

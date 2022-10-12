@@ -5,8 +5,10 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace ProjectTicket.UI.Controllers
@@ -38,9 +40,18 @@ namespace ProjectTicket.UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddDeliver(Deliver p)
+        public ActionResult AddDeliver(Deliver p, HttpPostedFileBase deliverImage)
         {
-           
+            if (deliverImage != null)
+            {
+                WebImage img = new WebImage(deliverImage.InputStream);
+                FileInfo imgInfo = new FileInfo(deliverImage.FileName);
+
+                string imgName = Guid.NewGuid().ToString() + imgInfo.Extension;
+                img.Save("~/Uploads/Deliver/" + imgName);
+                p.DeliverImagePath = "/Uploads/Deliver/" + imgName;
+            }           
+            
             p.DeliverStatus = Status.Aktif;
             dm.DelivertAdd(p);
             return RedirectToAction("AdminDeliverIndex");

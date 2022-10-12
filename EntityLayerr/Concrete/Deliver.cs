@@ -12,10 +12,8 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int DeliverID { get; set; }
-        public string Brand { get; set; }
-        public string Modell { get; set; }
-        public string SerialNumber { get; set; }
-        public int Quantity { get; set; }
+        public string DeliverName { get; set; }
+        public string DeliverImagePath { get; set; }
         public DateTime DeliverDate { get; set; }
         public Status DeliverStatus { get; set; }
 

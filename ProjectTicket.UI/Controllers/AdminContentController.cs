@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
+
 
 namespace ProjectTicket.UI.Controllers
 {
@@ -14,10 +17,10 @@ namespace ProjectTicket.UI.Controllers
         ContentManager cm = new ContentManager(new EfContentDal());
         // GET: AdminContent
         
-        public ActionResult Index()
+        public ActionResult Index(int p=1)
         {
             //um.GetList().OrderByDescending(x => x.UserID).Take(6).ToList();
-            var values = cm.GetList().OrderByDescending(x=>x.ContentDate).ToList();
+            var values = cm.GetList().OrderByDescending(x=>x.ContentDate).ToList().ToPagedList(p,7);
             return View(values);
         }
         

@@ -29,18 +29,18 @@ namespace ProjectTicket.UI.Controllers
         {
 
             var delValue = dm.GetByID(id);
-            
+            return View(delValue);
 
             //Kullanıcı ya ad soyad ile hitap etmek için
-            var username = User.Identity.Name;
-            var userName = c.Users.Where(x => x.UserMail == username).Select(y => y.UserName).FirstOrDefault();
-            var userLastName = c.Users.Where(x => x.UserMail == username).Select(y => y.UserLanstName).FirstOrDefault();
-            //var userDOSName = c.Users.Where(x => x.UserMail == username).Select(y => y.UserDateOfStart).FirstOrDefault();
+            //var username = User.Identity.Name;
+            //var userName = c.Users.Where(x => x.UserMail == username).Select(y => y.UserName).FirstOrDefault();
+            //var userLastName = c.Users.Where(x => x.UserMail == username).Select(y => y.UserLanstName).FirstOrDefault();
+            ////var userDOSName = c.Users.Where(x => x.UserMail == username).Select(y => y.UserDateOfStart).FirstOrDefault();
 
-            ViewBag.n = userName;
-            ViewBag.ln = userLastName;
-            //ViewBag.dos = userDOSName;
-            return View(delValue);
+            //ViewBag.n = userName;
+            //ViewBag.ln = userLastName;
+            ////ViewBag.dos = userDOSName;
+            
         }
     }
 }
